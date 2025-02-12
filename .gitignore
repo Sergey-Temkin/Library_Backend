@@ -1,11 +1,11 @@
 # Ignore build.sh
-# build.sh
+build.sh
 
 # Ignore Django.md
 Django.md
 
 # insert_users.py
-# insert_users.py
+insert_users.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -137,7 +137,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-# .env
+.env
 .venv
 env/
 venv/
