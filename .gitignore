@@ -1,6 +1,12 @@
 # Ignore Django.md
 Django.md
 
+# checkconection.py
+#checkconection.py
+
+# insert_users.py
+insert_users.py
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -130,7 +136,7 @@ celerybeat.pid
 # SageMath parsed files
 *.sage.py
 
-# Environments
+# Environments-------------------------------------------------------------------------
 .env
 .venv
 env/

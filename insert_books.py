@@ -117,12 +117,13 @@ books_data = [
 ]
 # Insert books into the database
 for book_data in books_data:
-    if not Book.objects.filter(name=book_data["name"]).exists():
-        serializer = BookSerializer(data=book_data)
-        if serializer.is_valid():
-            serializer.save()
-            print(f"Book '{book_data['name']}' added successfully!")
+    try:
+        book, created = Book.objects.get_or_create(name=book_data["name"], defaults=book_data)
+        if created:
+            print(f"✅ Book '{book_data['name']}' added successfully!")
         else:
-            print(f"Error adding book '{book_data['name']}': {serializer.errors}")
-    else:
-        print(f"Book '{book_data['name']}' already exists.")
+            print(f"⚠️ Book '{book_data['name']}' already exists, skipping.")
+    except Exception as e:
+        print(f"❌ Error adding book '{book_data['name']}': {e}")
+
+print("🎉 Book insertion completed!")
